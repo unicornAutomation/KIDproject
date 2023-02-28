@@ -1,0 +1,14 @@
+{   
+    "dcCode": "PTN",
+    "requestTypeCodeTerminate": "TERMINATE",
+    "requestTypeCodeResign": "RESIGN",
+    "requestTypeCodeDetailTerminate": "TT001",
+    "requestTypeCodeDetailResign": "",
+    "statusCode": "APPROVE-2",
+    "status": "APPROVE",
+    "staffID": "6100915",
+    "effectiveDate": "2022-12-10 08:00:00",
+    "lastWorkingDate": "2023-12-09 18:00:00",
+    "reasonCodeTerminate": "T006",
+    "reasonCodeResign": "R003"
+}

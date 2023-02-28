@@ -1,0 +1,11 @@
+{   
+    "dcCode": "PTN",
+    "statusCode": "SUBMIT",
+    "staffID": "2000006",
+    "clockDate": "2022-09-25",
+    "clockInDateTime": "2022-09-25 08:00:32",
+    "clockOutDateTime": "2022-09-25 18:00:32",
+    "reasonCode": "T7",
+    "adjustmentClockInTime": "2022-09-25 10:00:00",
+    "adjustmentClockOutTime": "2022-09-25 20:00:00"
+}

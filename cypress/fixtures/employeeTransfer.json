@@ -1,0 +1,10 @@
+{   
+    "dcCurrent":"PS1",
+    "dcDestination":"BYT",
+    "transferedStaffID": "200006",
+    "transferType":"SHORT-TERM",
+    "effectiveDateFrom":"2022-09-22",
+    "effectiveDateTo":"2022-09-30",
+    "reportToStaffID":"2000007",
+    "reason":"reason"
+}
