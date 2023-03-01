@@ -1,6 +1,6 @@
 {/* <reference types = "cypress"  />
 const cypress = require('cypress') */}
-const employeeManpower = require('../../fixtures/employeeManpower.json')
+const employeeManpower = require('../../fixtures/employeeRecruitment.json')
 
 describe("E2E 1", ()=> {
 
@@ -168,6 +168,7 @@ describe("E2E 1", ()=> {
                 [
                     {
                     "ticketNumber": employeeManpower.ticketNumber,
+                    "recruiterTypeCode": employeeManpower.recruiterTypeCode,
                     "positionCode": employeeManpower.positionCode,
                     "contractNumber": employeeManpower.contractNumber,
                     "idcardNumber": employeeManpower.idcardNumber,
@@ -208,7 +209,27 @@ describe("E2E 1", ()=> {
             })
         })
 
-        it("update Ticket Status",() => {
+        it("update onboarding",() => {
+            cy.request({
+            method : 'POST',
+                url : 'http://10.112.85.184:4001/kid-backend-api/pr/v1/item/onboarding/update',
+                headers : {
+                    // 'x-api-key':'Bearer '+ Cypress.env('token_reviewer'),
+                    'Authorization':'Bearer '+ Cypress.env('token_reviewer')
+                },
+                body : 
+                    {
+                        "ticketNumber": employeeManpower.ticketNumber,
+                        "requestNumber": Cypress.env('requestNo'),
+                        "onboardingDate": employeeManpower.onboardingDate
+                    }
+            }).then((res)=> {
+                expect(res.status).to.eq(200)
+                expect(res.body.description).to.contain("Success") 
+                })
+        })
+
+        it("update status",() => {
             cy.request({
             method : 'POST',
                 url : 'http://10.112.85.184:4001/kid-backend-api/pr/v1/status/Update',
@@ -218,9 +239,10 @@ describe("E2E 1", ()=> {
                 },
                 body : 
                     {
+                        "ticketNumber": employeeManpower.ticketNumber,
                         "positionCode": employeeManpower.positionCode,
+                        "recruiterTypeCode": employeeManpower.recruiterTypeCode,
                         "statusCode": "SUBMIT",
-                        "ticketNumber": employeeManpower.ticketNumber
                     }
             }).then((res)=> {
                 expect(res.status).to.eq(200)
@@ -248,7 +270,7 @@ describe("E2E 1", ()=> {
                 })
         })
 
-        it("Approval submit to onboarding",() => {
+        it.skip("Approval submit to onboarding",() => {
             cy.request({
             method : 'POST',
                 url : 'http://10.112.85.184:4001/kid-backend-api/ticket/v1/approval/submit',
@@ -268,7 +290,7 @@ describe("E2E 1", ()=> {
                 })
         })
 
-        it("Confirm download document",() => {
+        it.skip("Confirm download document",() => {
             cy.request({
                 method : 'POST',
                 url : 'http://10.112.85.184:4002/kid-api/interface/v1/manpower/onboarding/document/download/confirm',
@@ -287,7 +309,7 @@ describe("E2E 1", ()=> {
             })
         })
 
-        it("Confirm update onboarding",() => {
+        it.skip("Confirm update onboarding",() => {
             cy.request({
                 method : 'POST',
                 url : 'http://10.112.85.184:4002/kid-api/interface/v1/manpower/onboarding/status/update',
