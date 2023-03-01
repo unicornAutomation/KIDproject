@@ -1,4 +1,4 @@
-const employee = require('../../cypress/fixtures/employeeManpower.json')
+const employee = require('../../cypress/fixtures/employeeRecruitment.json')
 
 export const login = (username, password) => {
     cy.get('#inputUserName').type(username, {force:true})
@@ -24,7 +24,7 @@ export const assignTicketTimeAssignment = () => {
     cy.get('input').type(Cypress.env('ticketNumber'))
     cy.get('#btnFilterStaff').click()
     cy.get('#data > :nth-child(1) > :nth-child(1)').contains(Cypress.env('ticketNumber')).click()
-    cy.get('#owner').select(employee.idcardNumber)
+    cy.get('#owner').select(employee.selectOwner)
     cy.get('#btnDropdown').click()
     cy.get('#selectStatus').contains('SUBMIT').click()
     cy.get('#Assign').click()
@@ -37,7 +37,7 @@ export const assignTicketTransferAssignment = () => {
     cy.get('#data > :nth-child(1) > :nth-child(1) > span').contains(Cypress.env('ticketNumber')).click()
     cy.get('.card-body > .border').scrollIntoView()
     cy.get('#owner').select(employee.selectOwner)
-    cy.get('#btnDropdown').scrollIntoView().click()
+    cy.get('#btnDropdown').scrollIntoView().wait(2000).click()
     cy.get('#selectStatus').scrollIntoView().contains('SUBMIT').click()
     cy.get('#Assign').click()
 }
