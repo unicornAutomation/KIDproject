@@ -1,5 +1,5 @@
 const functions = require('../../support/function')
-const employeeTimeAdjustment = require('../../fixtures/employeeTimeAdjustment.json')
+const employeeTimeAdjustment = require('../../fixtures/employeeTimeAssignment.json')
 
 describe("E2E 1", ()=> {
 
