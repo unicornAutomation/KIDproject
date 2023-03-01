@@ -1,6 +1,6 @@
 import { login } from '../../support/function'
 const functions = require('../../support/function')
-const employee = require('../../fixtures/employeeManpower.json')
+const employee = require('../../fixtures/employeeRecruitment.json')
 
 describe("Recruitment E2E", () => {
 
