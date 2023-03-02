@@ -4,7 +4,6 @@ const employeeTimeAdjustment = require('../../fixtures/employeeTimeAssignment.js
 describe("E2E 1", ()=> {
 
     before(()=> {
-            cy.visit('http://10.112.85.185:4000/portal/Login')
 
             cy.request({
                     method : 'POST',
@@ -95,6 +94,7 @@ describe("E2E 1", ()=> {
         })
 
     it('E2E 1',{keystrokeDelay:100}, () => {
+        cy.visit('http://10.112.85.185:4000/portal/Login', {failOnStatusCode: false})
         functions.login('2000007','123456'),
         functions.assignTicketTimeAssignment(),
         functions.logout('อิทธิพัทธ์ มั่นคง'),

@@ -5,7 +5,6 @@ const employeeTransfer = require('../../fixtures/employeeTransfer.json')
 describe("Recruitment E2E", () => {
 
     before(()=> {
-        cy.visit('http://10.112.85.185:4000/portal/Login').viewport(1280, 800)
 
         cy.request({
                 method : 'POST',
@@ -99,6 +98,7 @@ describe("Recruitment E2E", () => {
     })
 
     it('E2E 1',{keystrokeDelay:0}, () => {
+        cy.visit('http://10.112.85.185:4000/portal/Login')
         functions.login('2000007','123456'),
         functions.assignTicketTransferAssignment(),
         functions.logout('อิทธิพัทธ์ มั่นคง'),
