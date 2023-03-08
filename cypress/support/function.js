@@ -8,6 +8,7 @@ export const login = (username, password) => {
 }
 
 export const assignTicketAssignment = () => {
+    cy.wait(6000)
     cy.get('#accordionSidebar').contains('Ticket Assignment').click()
     cy.get('input').type(Cypress.env('ticketNumber'))
     cy.get('#btnFilterStaff')
@@ -20,6 +21,7 @@ export const assignTicketAssignment = () => {
 }
 
 export const assignTicketTimeAssignment = () => {
+    cy.wait(6000)
     cy.get('#accordionSidebar').contains('Time Assignment').click()
     cy.get('input').type(Cypress.env('ticketNumber'))
     cy.get('#btnFilterStaff').click()
@@ -31,6 +33,7 @@ export const assignTicketTimeAssignment = () => {
 }
 
 export const assignTicketTransferAssignment = () => {
+    cy.wait(6000)
     cy.get('#accordionSidebar').contains('Location Assignment').click()
     cy.get('input').type(Cypress.env('ticketNumber'))
     cy.get('#btnFilter').click()
@@ -43,6 +46,7 @@ export const assignTicketTransferAssignment = () => {
 }
 
 export const assignTicketTerminationResignAssignment = () => {
+    cy.wait(6000)
     cy.get('#accordionSidebar').contains('Terminate/Resign Assignment').wait(0).click()
     cy.get('input').type(Cypress.env('ticketNumber'))
     cy.get('#btnFilter').click().wait(1000)
@@ -62,6 +66,7 @@ export const logout = (user) => {
 }
 
 export const recruiterAssignment = () => {
+    cy.wait(6000)
     cy.get('#accordionSidebar').contains('Recruiter Assignment').wait(0).click()
     cy.get('input').type(Cypress.env('ticketNumber'))
     cy.get('#btnFilterStaff').click()
@@ -79,6 +84,7 @@ export const recruiterAssignment = () => {
 }
 
 export const submitTimeAdjustment = () => {
+    cy.wait(6000)
     cy.get('#accordionSidebar').contains('Time Adjustment').wait(0).click()
     cy.get('input').type(Cypress.env('ticketNumber'))
     cy.get('#btnFilterStaff').click().wait(1000)
@@ -90,6 +96,7 @@ export const submitTimeAdjustment = () => {
 }
 
 export const submitLocationAdjustment = () => {
+    cy.wait(6000)
     cy.get('#accordionSidebar').contains('Location Adjustment').wait(0).click()
     cy.get('input').type(Cypress.env('ticketNumber'))
     cy.get('#btnFilter').click().wait(1000)
@@ -101,6 +108,7 @@ export const submitLocationAdjustment = () => {
 }
 
 export const submitTerminationResignAdjustment = () => {
+    cy.wait(6000)
     cy.get('#accordionSidebar').contains('Terminate/Resign Adjustment').wait(0).click()
     cy.get('input').type(Cypress.env('ticketNumber'))
     cy.get('#btnFilter').click().wait(1000)
